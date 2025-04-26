@@ -35,7 +35,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.PYTHONREPOSCAN }}
 
       - name: Check SonarCloud Quality Gate
-        uses: SonarSource/sonarcloud-quality-gate-action@master
+        uses: SonarSource/sonarcloud-quality-gate-action@v1.1.0
         timeout-minutes: 5
         with:
           scanMetadataReportFile: .scannerwork/report-task.txt
