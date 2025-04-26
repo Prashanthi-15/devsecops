@@ -33,3 +33,17 @@ jobs:
             -Dsonar.sources=vulnerablecode
         env:
           SONAR_TOKEN: ${{ secrets.PYTHONREPOSCAN }}
+
+      - name: Check SonarCloud Quality Gate
+        uses: SonarSource/sonarcloud-quality-gate-action@master
+        timeout-minutes: 5
+        with:
+          scanMetadataReportFile: .scannerwork/report-task.txt
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+      - name: deploy
+        run: |
+          echo 'Deploying'
+          sleep 5
+          echo 'Deployed'
