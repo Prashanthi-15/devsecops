@@ -28,7 +28,7 @@ jobs:
         uses: SonarSource/sonarcloud-github-action@v2
         with:
           args: >
-            -Dsonar.projectKey=prashanthi-15_devsecops
+            -Dsonar.projectKey=Prashanthi-15_devsecops
             -Dsonar.organization=prashanthi-15
             -Dsonar.sources=vulnerablecode
         env:
