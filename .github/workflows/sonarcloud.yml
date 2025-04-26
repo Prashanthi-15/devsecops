@@ -31,16 +31,10 @@ jobs:
             -Dsonar.projectKey=Prashanthi-15_devsecops
             -Dsonar.organization=prashanthi-15
             -Dsonar.sources=vulnerablecode
+            -Dsonar.qualitygate.wait=true
         env:
           SONAR_TOKEN: ${{ secrets.PYTHONREPOSCAN }}
 
-      - name: Check SonarCloud Quality Gate
-        uses: SonarSource/sonarcloud-quality-gate-action@v1.1.0
-        timeout-minutes: 5
-        with:
-          scanMetadataReportFile: .scannerwork/report-task.txt
-        env:
-          SONAR_TOKEN: ${{ secrets.PYTHONREPOSCAN }}
 
       - name: deploy
         run: |
