@@ -31,7 +31,6 @@ jobs:
             -Dsonar.projectKey=Prashanthi-15_devsecops
             -Dsonar.organization=prashanthi-15
             -Dsonar.sources=vulnerablecode
-            # -Dsonar.qualitygate.wait=true
         env:
           SONAR_TOKEN: ${{ secrets.PYTHONREPOSCAN }}
 
