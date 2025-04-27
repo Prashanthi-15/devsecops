@@ -4,13 +4,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                checkout([$class: 'GitSCM',
-                    branches: [[name: '*/main']],
-                    userRemoteConfigs: [[
-                        url: 'https://github.com/Prashanthi-15/devsecops.git',
-                        credentialsId: 'github-token'
-                    ]]
-                ])
+                checkout scm
             }
         }
 
